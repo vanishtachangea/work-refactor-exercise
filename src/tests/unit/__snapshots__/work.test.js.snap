@@ -1,0 +1,37 @@
+exports[`Refactored Version of Work should return log when type is log and allowWrite is false 1`] = `
+<div>
+  test default
+</div>
+`;
+
+exports[`Refactored Version of Work should return log when type is log and allowWrite is true 1`] = `
+<div>
+  test default
+</div>
+`;
+
+exports[`Refactored Version of Work should return mark if user is selected 1`] = `
+<div>
+  <div />
+   
+</div>
+`;
+
+exports[`Refactored Version of Work should return recordclient when type is log and allowWrite is false 1`] = `
+<div>
+  test default
+</div>
+`;
+
+exports[`Refactored Version of Work should return recordclient when type is log and allowWrite is true 1`] = `
+<div>
+  test default
+</div>
+`;
+
+exports[`Refactored Version of Work should return result from userClient.get, when type is passed 1`] = `
+<div>
+  <div />
+   
+</div>
+`;
