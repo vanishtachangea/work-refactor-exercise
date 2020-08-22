@@ -1,10 +1,8 @@
 
 import React from 'react';
+import Users from './data/users';
 
-const users = {
-    4: { name: 'Mark' },
-    5: { name: 'Paul' },
-};
+
 
 
 class UserClient extends React.Component {
@@ -17,8 +15,8 @@ class UserClient extends React.Component {
             return;
         const parts = await url.split('/users/');
 
-        if (users[parts[1]]) {
-            const userName = await users[parts[1]];
+        if (Users[parts[1]]) {
+            const userName = await Users[parts[1]];
             await this.setState({ id: parts[1], name: userName });
         }
     }

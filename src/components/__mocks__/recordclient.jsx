@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import records from '../__mocks__/records';
+import records from './data/records';
 
 class RecordClient extends React.Component {
   constructor(props) {

@@ -25,7 +25,7 @@ const App = function () {
      <Work type="log" allowWrite obj={obj}/>
     */}
     <Work type="record" id="4" />
-
+    <Work type={type} id="4" obj={obj}/>
   </div>
 }
 ReactDOM.render(
