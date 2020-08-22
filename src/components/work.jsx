@@ -15,12 +15,10 @@ class Work extends React.Component {
       record: {},
       obj: {}
     }
-    
+
   }
 
   componentDidMount() {
-    if(this.props.obj)
-    console.log("in mount" + this.props.obj.value)
     this.setState({ type: this.props.type })
     this.setState({ allowWrite: this.props.allowWrite })
     this.setState({ id: this.props.id })
@@ -38,11 +36,11 @@ class Work extends React.Component {
         const postUrl = '/url/to/another/service/records'
         return (<div><RecordClient url={postUrl} record={this.state.record} method='post' /></div>)
       case 'log':
-        return(<div><Log obj={this.state.obj} allowWrite={this.state.allowWrite} /></div>)
-      default:      
+        return (<div><Log obj={this.state.obj} allowWrite={this.state.allowWrite} /></div>)
+      default:
         const { obj } = this.state;
         if (obj)
-          console.log( {obj });
+          console.log({ obj });
         else
           console.log({ error: "No Matching Type" })
         return (<div></div>)

@@ -7,13 +7,6 @@ export const App = function () {
   const type = "user";
   const obj = { value: 100 };
   console.log({ obj });
-  const workProps = {
-    type: "user",
-    obj:
-      { value: 100 },
-    allowWrite: false,
-    id: "4"
-  }
   return <div>
 
     {/*     <Work type={type} id="4" obj={obj}/>
