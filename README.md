@@ -19,8 +19,8 @@ A switch statement is usually more efficient than a set of nested ifs. The compi
 
 ### Functional Component is not appropriate if we are calling other component
 Functional Compoment is good for simple displays. However, if we need to call another component which might take time to return the data, it is better to use 
-(a) Class Component
-(b) Use State
+- Class Component
+- Use State
 
 ### Change the API Calls Asynchronous
  userClient.get, recordClient.post, localStorage.write, remoteStorage.write should be made asychronous. 
@@ -37,7 +37,9 @@ npm run test
 ```
 
 ### Next Refactor Steps
-- Consider Adding Redux - Redux will make sense if we need to return state from the other functions to work.js.
+- Consider Adding Redux 
+    - Redux will make sense if there is communication between two components that don’t have a parent-child relationship.
+            ![](https://i2.wp.com/cdn-images-1.medium.com/max/1600/0*sMMLcNaYusJ3Qgtg.png?ssl=1)
 - More Mock Tests e.g. LocalStorage etc. 
 
 
