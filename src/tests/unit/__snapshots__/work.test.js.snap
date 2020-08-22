@@ -1,6 +1,10 @@
 exports[`Refactored Version of Work should return log when type is log and allowWrite is false 1`] = `
 <div>
-  test default
+  <div>
+    <div>
+      Obj Saved in Remote DB
+    </div>
+  </div>
 </div>
 `;
 
@@ -17,15 +21,30 @@ exports[`Refactored Version of Work should return mark if user is selected 1`] =
 </div>
 `;
 
-exports[`Refactored Version of Work should return recordclient when type is log and allowWrite is false 1`] = `
+exports[`Refactored Version of Work should return result from recordClient.post. when type is record 1`] = `
 <div>
-  test default
-</div>
-`;
-
-exports[`Refactored Version of Work should return recordclient when type is log and allowWrite is true 1`] = `
-<div>
-  test default
+  <div>
+    <div>
+      <p>
+        Leanne Graham
+      </p>
+    </div>
+    <div>
+      <p>
+        Sincere@april.biz
+      </p>
+    </div>
+    <div>
+      <p>
+        Ervin Howell
+      </p>
+    </div>
+    <div>
+      <p>
+        Shanna@melissa.tv
+      </p>
+    </div>
+  </div>
 </div>
 `;
 

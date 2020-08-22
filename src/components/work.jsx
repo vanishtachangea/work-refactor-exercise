@@ -2,7 +2,7 @@ import React from 'react';
 
 import UserClient from '../components/__mocks__/userclient';
 import RecordClient from '../components/__mocks__/recordclient';
-import LocalStorage from '../components/__mocks__/localstorage';
+import Log from '../components/__mocks__/log';
 
 class Work extends React.Component {
   constructor(props) {
@@ -31,7 +31,6 @@ class Work extends React.Component {
   render() {
 
     switch (this.state.type) {
-
       case 'user':
         const url = '/users/' + this.state.id;
         return <div><UserClient url={url} method='get' /> </div>
@@ -39,26 +38,7 @@ class Work extends React.Component {
         const postUrl = '/url/to/another/service/records'
         return (<div><RecordClient url={postUrl} record={this.state.record} method='post' /></div>)
       case 'log':
-        if (this.state.allowWrite) {
-          console.log("log state v"+this.state.obj.value)
-          console.log("log props v"+this.props.obj.value)
-          console.log("log props "+this.props.obj)
-          const  {obj } = this.state;
-
-            return(<div><LocalStorage obj={obj} /></div>)
-
-
-          //localStorage.write(props);
-          //remoteStorage.write(props);
-          console.log("log");
-          ///this.setState({ allowWrite: true })
-        }
-        else {
-          //this.setState({ allowWrite: false })
-          console.log("Not allow Write");
-        }
-        return (<div>fsfsd</div>)
-
+        return(<div><Log obj={this.state.obj} allowWrite={this.state.allowWrite} /></div>)
       default:      
         const { obj } = this.state;
         if (obj)
@@ -66,10 +46,7 @@ class Work extends React.Component {
         else
           console.log({ error: "No Matching Type" })
         return (<div></div>)
-
     }
-
-
   }
 
 

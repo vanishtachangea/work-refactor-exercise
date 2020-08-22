@@ -2,9 +2,6 @@
 import React from 'react';
 import Users from './data/users';
 
-
-
-
 class UserClient extends React.Component {
     constructor(props) {
         super(props);

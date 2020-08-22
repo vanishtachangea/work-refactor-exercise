@@ -2,6 +2,9 @@
   "name": "work-refactor-exercise",
   "version": "0.1.0",
   "private": true,
+  "jest":{
+    "setupTestFrameworkScriptFile":"./components/__mocks__/data/localStorageMock.jsx"
+  },
   "dependencies": {
     "@types/jest": "^26.0.10",
     "@types/node": "^14.6.0",

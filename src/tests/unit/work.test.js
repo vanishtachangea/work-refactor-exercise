@@ -1,6 +1,8 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import Work from '../../components/work';
+
 describe('Refactored Version of Work', () => {
     let component;
     it('should return result from userClient.get, when type is passed', () => {
