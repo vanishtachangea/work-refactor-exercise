@@ -1,22 +1,41 @@
 import React, { useState } from 'react';
 
-const useStateWithLocalStorage = localStorageKey =>{
-    const [value, setValue] = useState(localStorage.getItem(localStorageKey) || '');
+
+const useStateWithLocalStorage = localStorageKey => {
+    const [value, setValue] = React.useState(
+        localStorage.getItem(localStorageKey) || {}
+    );
+
     React.useEffect(() => {
         localStorage.setItem(localStorageKey, value);
-      }, [value]);
-}
+    }, [value]);
 
-const LocalStorage = (props) => {
+    return [value, setValue];
+};
 
-    //const [value, setValue] = useStateWithLocalStorage('workObjInLocalStorage');
-    console.log("Affdsfs")
-    console.log("local"+this.props.obj)
-    return (
-        <div>
-            <p>{this.props.obj.value}</p>
-        </div>
+const LocalStorage = props => {
+    const [obj, setObj] = useStateWithLocalStorage(
+        'workObjectInLocalStorage'
     );
+    if (obj.value)
+        return (
+            <div>
+                <p>{obj.value}</p>
+            </div>
+        );
+    else {
+        if (props.obj) {
+            setObj(props.obj)
+        }
+        else {
+            return (
+                <div>
+                    <p>Error in Local Storage</p>
+                </div>
+            );
+        }
+    }
+
 };
 
 export default LocalStorage;

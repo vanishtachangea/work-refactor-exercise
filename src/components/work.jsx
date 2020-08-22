@@ -15,11 +15,12 @@ class Work extends React.Component {
       record: {},
       obj: {}
     }
-    console.log(this.props);
+    
   }
 
   componentDidMount() {
-    console.log("in mount" + this.props.obj)
+    if(this.props.obj)
+    console.log("in mount" + this.props.obj.value)
     this.setState({ type: this.props.type })
     this.setState({ allowWrite: this.props.allowWrite })
     this.setState({ id: this.props.id })
@@ -36,14 +37,17 @@ class Work extends React.Component {
         return <div><UserClient url={url} method='get' /> </div>
       case 'record':
         const postUrl = '/url/to/another/service/records'
-        return (<div><RecordClient url={postUrl} record={this.state.record} method="post" /></div>)
+        return (<div><RecordClient url={postUrl} record={this.state.record} method='post' /></div>)
       case 'log':
         if (this.state.allowWrite) {
-          console.log("log state"+this.state.obj)
-          console.log("log props"+this.props.obj)
-          const {obj}=this.state.obj;
-          if (obj)
+          console.log("log state v"+this.state.obj.value)
+          console.log("log props v"+this.props.obj.value)
+          console.log("log props "+this.props.obj)
+          const  {obj } = this.state;
+
             return(<div><LocalStorage obj={obj} /></div>)
+
+
           //localStorage.write(props);
           //remoteStorage.write(props);
           console.log("log");
@@ -55,11 +59,10 @@ class Work extends React.Component {
         }
         return (<div>fsfsd</div>)
 
-      default:
-      
+      default:      
         const { obj } = this.state;
         if (obj)
-          console.log({ obj });
+          console.log( {obj });
         else
           console.log({ error: "No Matching Type" })
         return (<div></div>)
